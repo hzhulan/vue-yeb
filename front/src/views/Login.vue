@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import {postRequest} from '../utils/api.js';
+
 export default {
   name: "Login",
   data() {
@@ -50,7 +52,7 @@ export default {
         username: "张三",
       },
       checked: true,
-      captureUrl: "/api/img",
+      captureUrl: "",
       rules: {
         username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
         password: [{ required: true, message: "请输入密码", trigger: "blur" }],
@@ -70,6 +72,12 @@ export default {
         });
     },
   },
+  mounted() {
+    postRequest('/api/img', {}).then(res => {
+      console.log(res)
+      this.captureUrl=res.data.img;
+    });
+  }
 };
 </script>
 
