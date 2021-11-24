@@ -31,7 +31,7 @@
         ></el-input>
         <img :src="captureUrl" />
       </el-form-item>
-      <el-checkbox v-model="checked" class="loginRememgberMe"
+      <el-checkbox v-model="checked" class="loginRememgerMe"
         >记住我</el-checkbox
       >
       <el-button type="primary" style="width: 100%" @click="submitLogin"
@@ -45,7 +45,6 @@
 export default {
   name: "Login",
   data() {
-    debugger
     return {
       loginForm: {
         username: "张三",
@@ -88,7 +87,7 @@ export default {
   margin: 10px auto 20px auto;
   text-align: center;
 }
-.loginRememgberMe {
+.loginRememgerMe {
   text-align: left;
   margin: 0 auto 20px auto;
 }
